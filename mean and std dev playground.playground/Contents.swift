@@ -32,7 +32,7 @@ func meanStdDev (a: [Double] ) -> (mean: Double, standardDeviation: Double) {
      Then work out the mean of those squared differences.
      Take the square root of that and we are done!*/
     
-    print("input array=\(a)")
+    //print("input array=\(a)")
     
     
     var myMean = 0.0
@@ -43,14 +43,14 @@ func meanStdDev (a: [Double] ) -> (mean: Double, standardDeviation: Double) {
     var difference = [Double](repeating:0.0, count: a.count)
     var squareOfDifference = [Double](repeating:0.0, count: a.count)
     
-    UInt(a.count)
+    //UInt(a.count)
     
     vDSP_sveD(a, 1, &sum, UInt(a.count))
     sum
     
     myMean = sum/Double(a.count)
     
-    print("mean=\(myMean)")
+    //print("mean=\(myMean)")
     
     var minusMean = -myMean
     
@@ -63,7 +63,7 @@ func meanStdDev (a: [Double] ) -> (mean: Double, standardDeviation: Double) {
     
     myStandardDeviation = sqrt(meanOfSquaredValues)
     
-    print("standard deviation=\(myStandardDeviation)")
+    //print("standard deviation=\(myStandardDeviation)")
     
     return (mean: myMean, standardDeviation: myStandardDeviation)
 }

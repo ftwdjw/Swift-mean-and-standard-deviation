@@ -82,4 +82,25 @@ let (mean, standardDev) = meanStdDev(a: doubleTestArrray)
 
     print("standard deviation=\(standardDev)")
 
+func scalarProduct (a: [Double], b: Double) -> [Double] {
+    //Computes the scalar product of vectors A and scalar B and leaves the result in output vector; double precision.
+    var bb=b
+    var result = [Double](repeating:0.0, count: a.count)
+    
+    //vDSP_dotprD(a, 1, b, 1, &result, UInt(a.count))
+    vDSP_vsmulD(a, 1, &bb, &result, 1, UInt(a.count))
+    return result
+}
+
+let timesTen = scalarProduct(a: doubleTestArrray, b: 10.0)
+
+let (mean1, standardDev1) = meanStdDev(a: timesTen)
+
+
+print("meanx10=\(mean1)")
+
+print("standard deviationx10=\(standardDev1)")
+
+// scaling the data by x10 scales thw mean and the standard deviation  by 10
+
 

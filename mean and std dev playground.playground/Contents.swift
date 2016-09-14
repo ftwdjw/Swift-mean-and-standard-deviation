@@ -73,12 +73,12 @@ let doubleTestArrray = IntToDouble(a: testArray )
 
 print("double test array=\(doubleTestArrray)")
 
-let mean = meanStdDev(a: doubleTestArrray).mean
-
-let standardDev = meanStdDev(a: doubleTestArrray).standardDeviation
+let (mean, standardDev) = meanStdDev(a: doubleTestArrray)
 
 
-print("mean=\(mean)")
+
+
+    print("mean=\(mean)")
 
     print("standard deviation=\(standardDev)")
 
